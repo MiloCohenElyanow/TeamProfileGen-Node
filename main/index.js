@@ -48,5 +48,57 @@ async function loopMain(){
 }
 
 function pushPage(){
+  let htmlPage = `<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>My Team</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  </head>
+  <body>
+      <header class="container-fluid text-center text-light bg-danger py-5">
+          <h1>My Team</h1>
+      </header>
 
+      <main class="container-fluid pt-5 d-flex justify-content-center">
+      `;
+  employees.forEach(obj => {
+    htmlPage += `
+    <div class="card" style="width: 18rem;">
+    <img src="./assets/employeSilhouette.png" class="card-img-top" alt="employeSilhouette">
+    <div class="card-body">
+      <h5 class="card-title">${obj.get_Name()}</h5>
+      <h4 class="card-subtitle">${obj.get_Job()}</h4>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">${obj.get_Id()}</li>
+      <li class="list-group-item">Email: <a href="mailto:${obj.get_Email()}">${obj.get_Email()}</a></li>
+      <li class="list-group-item">
+    `;
+    switch(obj.get_Job()){
+      case 'Manager':
+        html+= `Office: ${obj.officeNumber}</li>`;
+        break;
+      case 'Engineer':
+        html+= `Github:<a href="https://github.com/${obj.githubURL}" target="_blank">${obj.githubURL}</a></li>`;
+        break;
+      case 'Intern':
+        html+= `school: ${obj.school}</li>`;
+        break;
+    };
+    html+=`
+        </ul>
+      </div>
+    </div>`;
+  });
+  html+=`
+    </main>
+  </body>
+  </html>
+  `
+  FS.writeFile(`./dist/index.html`, html, err => err ? console.log("Error: ",err): console.log('succes'));
 }
+
+init();
