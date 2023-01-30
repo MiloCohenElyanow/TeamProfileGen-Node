@@ -1,3 +1,6 @@
+const FS = require("fs"); // FS for file system
+const INQ = require("inquirer"); // INQ for inquirer
+
 class Employee {
 // all employees should have attributes of name id and email, they should all also be returnable from anywhere...
   constructor(name,id,email){
@@ -6,18 +9,18 @@ class Employee {
     this.email = email;
   }
   
-  getname(){
-    return this.name
+  get_Name(){
+    return (this.name)
   }
-  getid(){
-    return this.id
+  get_Id(){
+    return (this.id)
   }
-  getemail(){
-    return this.email
+  get_Email(){
+    return (this.email)
   }
 
-  getjob(){
-    return 'employee'
+  get_Job(){
+    return ('employee')
   }
 }
 
