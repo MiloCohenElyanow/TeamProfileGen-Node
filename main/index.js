@@ -75,7 +75,30 @@ function pushPage(){
     <ul class="list-group list-group-flush">
       <li class="list-group-item">${obj.get_Id()}</li>
       <li class="list-group-item">Email: <a href="mailto:${obj.get_Email()}">${obj.get_Email()}</a></li>
-    </ul>
+      <li class="list-group-item">
     `;
-  })
+    switch(obj.get_Job()){
+      case 'Manager':
+        html+= `Office: ${obj.officeNumber}</li>`;
+        break;
+      case 'Engineer':
+        html+= `Github:<a href="https://github.com/${obj.githubURL}" target="_blank">${obj.githubURL}</a></li>`;
+        break;
+      case 'Intern':
+        html+= `school: ${obj.school}</li>`;
+        break;
+    };
+    html+=`
+        </ul>
+      </div>
+    </div>`;
+  });
+  html+=`
+    </main>
+  </body>
+  </html>
+  `
+  FS.writeFile(`./dist/index.html`, html, err => err ? console.log("Error: ",err): console.log('succes'));
 }
+
+init();
