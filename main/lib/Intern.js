@@ -13,7 +13,7 @@ class Intern extends Employee {
     return this.school;
   }
 
-  get_job(){
+  get_Job(){
     return'Intern'
   }
 }
