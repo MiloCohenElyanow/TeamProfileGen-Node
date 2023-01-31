@@ -12,11 +12,11 @@ class Engineer extends Employee {
     this.githubURL = githubURL;
   }
 
-  get_githubURL(){
+  get_GithubURL(){
     //adding get_githubURL method to engineer,
     return (this.githubURL);
   }
-  get_job(){
+  get_Job(){
     return ("Engineer");
   }
 }
