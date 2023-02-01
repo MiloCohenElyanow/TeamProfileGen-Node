@@ -12,6 +12,9 @@ class Manager extends Employee {
   get_Job(){
     return 'Manager';
   }
+  get_OfficeNumber(){
+    return this.officeNumber;
+  }
 }
 
 const inquireAttributes = [
