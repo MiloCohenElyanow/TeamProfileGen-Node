@@ -19,10 +19,10 @@
 
 ## Installation
 
-  If your not the reading type like me heres a quick video showing installation and feature usage [HERE](linkvideo)
+  If your not the reading type like me heres a quick video showing installation and feature usage [HERE](https://drive.google.com/file/d/1HwUvK-iNqe8EGj1cLWtpkNBklpg2VE35/view?usp=sharing)
   Otherwise please read the instructions below, Im going to keep them LIGHT.
 
-  - either pull down this repository from github [HERE](githublink) or download the entire file from github [HERE]()
+  - either pull down this repository from github [HERE](https://github.com/whotf1/TeamProfileGen-Node) or download the entire file from github [HERE](https://github.com/whotf1/TeamProfileGen-Node)
 
   - unzip/unpack this project and throw it into your favorite IDE or work with your favorite terminal, using your root of your computer where ever I or these instruction use any file path(/thisFile path OR ./someFilePathHere/orHere)
 
@@ -33,6 +33,8 @@
   - type in the command line/ run {node index.js} to view program in action
 
   - once you run the program and answer questions from jest, where the heck is your html file? IT IS IN PagesHtml FOLDER, IF YOU MAKE MULTIPLE FILES THEY WILL OVERWRITE EACH OTHER, if you want to make multiple and save multiple please manually move each individual html file to a different location before making a new one.
+
+  - please note: pagesHtml must always have some kind of file in it, it does not matter what kind or the contents as long as it is a public visible file, otherwise the pathing to that folder seems to get messy.
 
 ## Usage
 
