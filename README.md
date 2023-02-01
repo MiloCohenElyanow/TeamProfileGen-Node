@@ -34,7 +34,7 @@
 
   - once you run the program and answer questions from jest, where the heck is your html file? IT IS IN PagesHtml FOLDER, IF YOU MAKE MULTIPLE FILES THEY WILL OVERWRITE EACH OTHER, if you want to make multiple and save multiple please manually move each individual html file to a different location before making a new one.
 
-  - please note: pagesHtml must always have some kind of file in it, it does not matter what kind or the contents as long as it is a public visible file, otherwise the pathing to that folder seems to get messy.
+  - Sample: there is a sample html page in the pagesHtml folder if you want to see a mock up of what this website will look like.
 
 ## Usage
 
