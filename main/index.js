@@ -55,7 +55,7 @@ function pushPage(){
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-      <title>bruh Team</title>
+      <title>Team Profile Generator</title>
   </head>
   <body>
       <header class="container-fluid text-center text-light bg-danger py-5">
@@ -67,7 +67,7 @@ function pushPage(){
   employees.forEach(obj => {
     htmlPage += `
     <div class="card" style="width: 18rem;">
-    <img src="../assets/employeSilhouette.png" class="card-img-top" alt="employeSilhouette" style="width:8rem height:8rem;">
+    <img src="../assets/employeSilhouette.png" class="card-img-top" alt="employeSilhouette"">
     <div class="card-body">
       <h5 class="card-title">${obj.get_Name()}</h5>
       <h4 class="card-subtitle">${obj.get_Job()}</h4>
@@ -98,7 +98,7 @@ function pushPage(){
   </body>
   </html>
   `
-  FS.writeFile(`./dist/index.html`, htmlPage, err => err ? console.log("Error: ",err): console.log('succes'));
+  FS.writeFile(`./pagesHtml/yourhtmlpage.html`, htmlPage, err => err ? console.log("Error: ",err): console.log('succes'));
 }
 
 init();
