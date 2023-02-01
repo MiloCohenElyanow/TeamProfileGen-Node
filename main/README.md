@@ -2,7 +2,7 @@
 
 ## Description
 
-  This application is exactly what the title says it is. It is a team profile generator, made around Node: Inquirer, & in depth testing around Node:Jest. This program when ran will prompt you with questions from inquirer to build your work team. Inquirer will ask you a series of questions to enter information about your team members, you can have as many as you like! Once your done adding your team memebers the HTML web page will be generated, and you can view that clean team profile you have always wanted!
+  This application is exactly what the title says it is. It is a team profile generator, made around Node: Inquirer, & in depth testing around Node:Jest. This program when ran will prompt you with questions from inquirer to build your work team. Inquirer will ask you a series of questions to enter information about your team members, you can have as many as you like! Once your done adding your team members the HTML web page will be generated, and you can view that clean team profile you have always wanted!
 
 ## Table of Contents
 
@@ -32,7 +32,7 @@
   - type in the command line/ run {node test} to run and view tests from the tests folder
   - type in the command line/ run {node index.js} to view program in action
 
-  - once you run the program and answer questions from jest, where the heck is your html file? IT IS IN dist FOLDER, IF YOU MAKE MULTIPLE FILES THEY WILL OVERWRITE EACH OTHER, if you want to make multiple and save multiple please manually move each individual html file to a different location before making a new one.
+  - once you run the program and answer questions from jest, where the heck is your html file? IT IS IN PagesHtml FOLDER, IF YOU MAKE MULTIPLE FILES THEY WILL OVERWRITE EACH OTHER, if you want to make multiple and save multiple please manually move each individual html file to a different location before making a new one.
 
 ## Usage
 
@@ -45,7 +45,32 @@
     - In depth OOP (Object Oriented Programming)
     - In depth Advanced file structuring
 
-
 ## Tests
 
+  you can find the tests folder im sure in this project. Each test tests the different types of employees themselfs, and their unique aspects, aswell as tests the super object employee, these tests work by using a Node module called Jest, Jest allows for easy file and script testing by allowing you to run that file, object, function, whatever, and match a expected outcome against what actually happens when you use the specified thing.
+
 ## License
+
+  MIT License
+
+Copyright (c) [2023] [Milo Cohen-Elyanow]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+[CHECKOUTLISCENCEHERE](https://choosealicense.com/licenses/mit/)
