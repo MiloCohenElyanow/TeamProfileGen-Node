@@ -1,40 +1,40 @@
 const FS = require("fs"); // FS for file system
-const INQ = require("inquirer"); // INQ for inquirer
+const inq = require("inquirer"); // INQ for inquirer
 const JST = require("jest");//JST for jest
-
+// import * as inq from "inquirer"
+//iNQ
 const Manager = require("./lib/Manager");
 const Intern = require("./lib/Intern");
 const Engineer = require("./lib/Engineer");
-const { default: inquirer } = require("inquirer");
 
 const employees = [];
 let complete = false;
 
 //imediatly as app starts we need a manager to this will be completed first, response from inquire will be send to the array
 async function init(){
-  const data = await inquirer.prompt(Manager.inquireAttributes)
-  employees.push(Manager.inquireAttributes(data));
+  const data = await inq.prompt(Manager.inquireAttributes)
+  employees.push(Manager.createEmployee(data));
   loopMain();
 }
 // as long as complete is not true and we are not already in another prompt this prompt will be active.
 async function loopMain(){
-  if (complete !== true){
-    const response = await inquirer.prompt([
+  if (!complete){
+    const response = await inq.prompt([
       {
         type:"list",
         message:"select an eomployee to add or complete your additions: ",
         choices:["Engineer","Intern","Complete"],
-        name:"selectType"
+        name:"advance"
       }
     ])
-    switch(response.selectType){
+    switch(response.advance){
       case "Engineer":
         //when engineer is selected we await the prompt response then push the response data into an array
-        const engineerData = await inquirer.prompt(Engineer.questions) 
+        const engineerData = await inq.prompt(Engineer.inquireAttributes) 
         employees.push(Engineer.createEmployee(engineerData));
         break;
       case "Intern":
-        const internData = await inquirer.prompt(Intern.inquireAttributes)
+        const internData = await inq.prompt(Intern.inquireAttributes)
         employees.push(Intern.createEmployee(internData));
         break;
         //once complete is selected switch complete bool to true and that will break the loop of selectors
@@ -54,8 +54,8 @@ function pushPage(){
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>My Team</title>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+      <title>bruh Team</title>
   </head>
   <body>
       <header class="container-fluid text-center text-light bg-danger py-5">
@@ -67,7 +67,7 @@ function pushPage(){
   employees.forEach(obj => {
     htmlPage += `
     <div class="card" style="width: 18rem;">
-    <img src="./assets/employeSilhouette.png" class="card-img-top" alt="employeSilhouette">
+    <img src="../assets/employeSilhouette.png" class="card-img-top" alt="employeSilhouette" style="width:8rem height:8rem;">
     <div class="card-body">
       <h5 class="card-title">${obj.get_Name()}</h5>
       <h4 class="card-subtitle">${obj.get_Job()}</h4>
@@ -79,26 +79,26 @@ function pushPage(){
     `;
     switch(obj.get_Job()){
       case 'Manager':
-        html+= `Office: ${obj.officeNumber}</li>`;
+        htmlPage += `Office: ${obj.officeNumber}</li>`;
         break;
       case 'Engineer':
-        html+= `Github:<a href="https://github.com/${obj.githubURL}" target="_blank">${obj.githubURL}</a></li>`;
+        htmlPage += `Github:<a href="https://github.com/${obj.githubURL}" target="_blank">${obj.githubURL}</a></li>`;
         break;
       case 'Intern':
-        html+= `school: ${obj.school}</li>`;
+        htmlPage += `school: ${obj.school}</li>`;
         break;
     };
-    html+=`
+    htmlPage+=`
         </ul>
       </div>
     </div>`;
   });
-  html+=`
+  htmlPage+=`
     </main>
   </body>
   </html>
   `
-  FS.writeFile(`./dist/index.html`, html, err => err ? console.log("Error: ",err): console.log('succes'));
+  FS.writeFile(`./dist/index.html`, htmlPage, err => err ? console.log("Error: ",err): console.log('succes'));
 }
 
 init();

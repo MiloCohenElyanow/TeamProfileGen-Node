@@ -41,7 +41,7 @@ const inquireAttributes = [
 ];
 
 function createEmployee(data){
-  const manager = new Manager(data.name, data.id, data.email, data.office);
+  const manager = new Manager(data.name, data.id, data.email, data.officeNumber);
   return manager;
 }
 
